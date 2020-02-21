@@ -23,7 +23,7 @@ do
 
 		# TO GET RANDOM NUMBER
 		random=$((RANDOM%2))
-
+	
 		# TO GET WIN/LOSS
 		if [ $random -eq $WIN ]
 		then
@@ -46,4 +46,5 @@ do
 done
 	echo "Daily Amount:      "${store4[@]}
 	echo "Daily Stake key:   "${!store1[@]}
+	echo "Daily Stake value: "${store1[@]}
 	echo "Total:             "${store5[@]}
