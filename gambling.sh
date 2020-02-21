@@ -12,12 +12,18 @@ MAXIMUM=$(( $stake*150/100 ))
 # TO GET RANDOM NUMBER
 random=$((RANDOM%2))
 
-# BET A GAMBLER TO GET WIN OR LOSS
-if (( $random == 1 ))
-then
-	((stake++))
-	((winCount++))
-else
-	((stake--))
-	((lossCount++))
-fi
+# GAMBLER FOR 50% WIN/LOSS
+while (( $stake>$MINIMUM && $stake<$MAXIMUM ))
+	do
+
+		# TO GET WIN OR LOSS
+		if (( $random == 1 ))
+		then
+			((stake++))
+			((winCount++))
+		else
+			((stake--))
+			((lossCount++))
+		fi
+done
+
