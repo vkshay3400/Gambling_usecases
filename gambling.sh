@@ -23,7 +23,7 @@ do
 
 		# TO GET RANDOM NUMBER
 		random=$((RANDOM%2))
-	
+		
 		# TO GET WIN/LOSS
 		if [ $random -eq $WIN ]
 		then
@@ -48,3 +48,15 @@ done
 	echo "Daily Stake key:   "${!store1[@]}
 	echo "Daily Stake value: "${store1[@]}
 	echo "Total:             "${store5[@]}
+
+# TO FIND LUCKIEST 
+for k in ${!store5[@]}
+do 
+	echo $k 'Day_is_Luckiest' ${store5[$k]}
+done | sort -rn -k3 | head -1
+
+# TO FIND UNLUCKIEST 
+for k in ${!store5[@]}
+do 
+	echo $k 'Day_is_Unluckiest' ${store5[$k]}
+done | sort -rn -k3 | tail -1
