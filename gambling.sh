@@ -16,8 +16,8 @@ random=$((RANDOM%2))
 if (( $random == 1 ))
 then
 	((stake++))
+	((winCount++))
 else
 	((stake--))
+	((lossCount++))
 fi
-
-
